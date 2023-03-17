@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import React from 'react';
+import './App.css';
 
+const HOST = "https://siprip-api.onrender.com";
 export class App extends React.Component {
 
   constructor(props) {
@@ -14,7 +14,7 @@ export class App extends React.Component {
   }
 
   componentDidMount() {
-    fetch("https://siprip-api.onrender.com/api/skins", {
+    fetch(`${HOST}/api/skins`, {
       headers: {
         'x-auth-token': import.meta.env.VITE_PLAYER_TOKEN
       }
