@@ -16,7 +16,7 @@ Tu peux utiliser cette base de code d'une application React.js pour développer 
 
 ***/!\ Attention /!\*** il y a plusieurs niveaux de difficulté.
 
-Tu ne peux pas acheter une skin tant que tu n'as pas débloqué de niveau suivant :
+Tu ne peux pas acheter une skin d'un niveau N+1 tant que tu n'as pas réussi un paiement de niveau N :
 - Niveau 1 : Carte cadeau PSN inférieur ou égal à 10€ avec 1 achat tous les 10 minutes
 - Niveau 2 : Ticket PSN inférieur ou égal à 50€  avec 1 achat tous les 5 minutes
 - Niveau 3 : Paypal inférieur ou égal à 1000€ avec 1 achat par minute
@@ -54,8 +54,47 @@ Si tu as bien saisie ton API key, un catalogue de 50 skins s'affiche après un c
 ## L'API Siprip
 
 Tu vas consommer l'API de Siprip pour effectuer les paiements.
-Tu trouveras la documentation de cette API en suivant ce [lien](https:// ).
+L'api est accessible sur ce domaine : [https://siprip-api.onrender.com/api](https://https://siprip-api.onrender.com/api).
 
-Certaines routes ne sont pas documentés (volontairement) et c'est à toi de les découvrir pour passer les niveaux.
+Les routes ne sont pas documentées (volontairement) et c'est à toi de les découvrir pour passer les niveaux.
+
+## Niveau 1
+
+Pour t'aider à démarrer, voici les intructions qui te permettrons de passer le niveau 1.
+
+La route que tu dois appeler est [https://siprip-api.onrender.com/api/payment](https://https://siprip-api.onrender.com/api/payment) avec la méthode POST.
+Tu dois founir le token reçu au moment de ton enregistrement au dojo dans un header `x-auth-token`.
+Le format du body attendu est :
+```json
+{
+	"card_serial": "XXXX XXXX XXXX XXXX",
+	"amount": 0,
+	"skin_id": 0
+}
+```
+
+Afin de réussir ton paiement :
+- Tu dois fournir une carte composée de 16 chiffres.
+- Les chiffres sont groupés par 4 et composent chacun un bloc
+```
+XXXX      XXXX       XXXX      XXXX
+bloc 1    bloc 2     bloc 3    bloc 4
+````
+- Pour valider ce niveau, tu dois effectuer un paiement inférieur à 10€ avec une carte qui respecte les règles suivantes :
+    - Les chiffres sont additionnés 2 à 2 dans chaque bloc tant que le résultat n’est pas inférieur à 10.
+    Par exemple : 
+```
+       1234
+    1+2 | 3+4
+      3 |  7
+       3+7
+       10
+       1+0
+        1
+```
+    - La somme des blocs 1 et 3 doit être inférieur à 10
+    - Pour être valide, la carte respecte l’algorithme de Luhn
+
+Une fois un paiement réussi, un indice te permettant de recevoir les instructions pour le niveau suivant sera glissé dans la réponse ;).
 
 Good Luck, Have Fun (GL HF) !!
