@@ -26,9 +26,10 @@ Tu ne peux pas acheter une skin d'un niveau N+1 tant que tu n'as pas réussi un 
 
 Afin de jouer, tu as besoin d'une API key qui te sera envoyée par email lors de ton enregistrement.
 
-Suis les intructions sur cette [page](https:// ) pour t'enregistrer et recevoir ton API key.
+Suis les intructions sur cette [page](https://siprip-web-6yw9.onrender.com) pour t'enregistrer et recevoir ton API key.
 Une fois obtenue, tu dois créer un fichier _.env.local_ à la racine de ce projet et ajouter une ligne avec ta clé en suivant cette syntaxe :
 ```
+VITE_GAME_HOST=https://siprip-api-aze5.onrender.com
 VITE_PLAYER_TOKEN=<TON API KEY>
 ```
 
@@ -68,12 +69,12 @@ Le format du body attendu est :
 ```json
 {
 	"card_serial": "XXXX XXXX XXXX XXXX",
-	"amount": 0,
 	"skin_id": 0
 }
 ```
 
 Afin de réussir ton paiement :
+- Tu dois ajouter une page de paiement où tu saisiras ton numéro de carte et un bouton valider pour processer ta requête
 - Tu dois fournir une carte composée de 16 chiffres.
 - Les chiffres sont groupés par 4 et composent chacun un bloc
 ```

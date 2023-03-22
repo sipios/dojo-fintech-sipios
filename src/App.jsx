@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 
-const HOST = "https://siprip-api.onrender.com";
+const HOST = import.meta.env.VITE_GAME_HOST;
 export class App extends React.Component {
 
   constructor(props) {
