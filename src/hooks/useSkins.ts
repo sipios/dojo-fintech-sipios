@@ -11,7 +11,7 @@ export const useSkins = () => {
     const fetchSkins = async () => {
         setIsLoading(true);
         try {
-            const result = await apiClient.get('/skins');
+            const result = await apiClient.get('/api/skins');
             setSkins(result.data);
         } catch (e) {
             setError(e as AxiosError);
