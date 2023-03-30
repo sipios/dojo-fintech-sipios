@@ -50,7 +50,7 @@ Pour lancer ton application tu peux utiliser la commande :
 $ npm run dev
 ````
 Un serveur local va distribuer ton application que tu peux consulter sur le lien [http://127.0.0.1:5173](http://127.0.0.1:5173).
-Si tu as bien saisie ton API key, un catalogue de 50 skins s'affiche après un court temps de chargement.
+Si tu as bien saisi ton API key, un catalogue de 50 skins s'affiche après un court temps de chargement.
 
 ## L'API Siprip
 
