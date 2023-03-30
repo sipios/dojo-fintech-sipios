@@ -55,7 +55,7 @@ Si tu as bien saisie ton API key, un catalogue de 50 skins s'affiche après un c
 ## L'API Siprip
 
 Tu vas consommer l'API de Siprip pour effectuer les paiements.
-L'api est accessible sur ce domaine : [https://siprip-api.onrender.com/api](https://https://siprip-api.onrender.com/api).
+L'api est accessible sur ce domaine : [https://siprip-api-aze5.onrender.com/api](https://siprip-api-aze5.onrender.com/api).
 
 Les routes ne sont pas documentées (volontairement) et c'est à toi de les découvrir pour passer les niveaux.
 
@@ -63,7 +63,7 @@ Les routes ne sont pas documentées (volontairement) et c'est à toi de les déc
 
 Pour t'aider à démarrer, voici les intructions qui te permettrons de passer le niveau 1.
 
-La route que tu dois appeler est [https://siprip-api.onrender.com/api/payment](https://https://siprip-api.onrender.com/api/payment) avec la méthode POST.
+La route que tu dois appeler est [https://siprip-api-aze5.onrender.com/api/payment](https://siprip-api-aze5.onrender.com/api/payment) avec la méthode POST.
 Tu dois founir le token reçu au moment de ton enregistrement au dojo dans un header `x-auth-token`.
 Le format du body attendu est :
 ```json
