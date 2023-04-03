@@ -1,14 +1,14 @@
 # Dojo fintech Sipios
 
-Le CEO de _Skin My Life_ commence à se poser des questions. Pourquoi son concurrent _Skin me_ fait-il autant de ventes ? Apres avoir fait appel à un cabinet de conseil en stratégie, il découvre que le concurrent permet à ses clients non seulement de payer avec le moyen de leur choix mais en plus ces paiements sont complètements déplafonnés. Un avantage conséquent lorsqu’il s’agit d’acheter plusieurs **skins** ou **Add on**...
+Le CEO de _Skin My Life_ commence à se poser des questions. Pourquoi son concurrent _Skin me_ fait-il autant de ventes ? Après avoir fait appel à un cabinet de conseil en stratégie, il découvre que le concurrent permet à ses clients non seulement de payer avec le moyen de leur choix mais en plus ces paiements sont complètement déplafonnés. Un avantage conséquent lorsqu’il s’agit d’acheter plusieurs **skins** ou **Add on**...
 
 Après une réunion avec KO-BC, _Skin My Life_ vous missione pour créer une interface web plus poussée en utilisant l’API de paiement Siprip de KO-BC avec qui il vient de faire affaire. Tu l’as compris, plus les joueurs peuvent dépenser par achat, plus tu permettras à _Skin My Life_ de rattraper son retard.
 
 ## Le but du jeu
 
-Le but du jeu est de généré le plus gros chiffre d'affaire.
+Le but du jeu est de générer le plus gros chiffre d'affaire.
 Vous êtes mis en concurrence entre vous et vous pouvez consulter le classement en suivant ce [lien](https://siprip-web-6yw9.onrender.com/ranking?session=9).
-Le gagant est le joueur qui aura généré le plus gros chiffre d'affaire d'ici la fin de la session.
+Le gagnant est le joueur qui aura généré le plus gros chiffre d'affaire d'ici la fin de la session.
 
 ## Les règles du jeu
 
@@ -24,9 +24,9 @@ Tu ne peux pas acheter une skin d'un niveau N+1 tant que tu n'as pas réussi un 
 
 ## Pré-requis
 
-Afin de jouer, tu as besoin d'une API key qui te sera envoyée par email lors de ton enregistrement.
+Afin de jouer, tu as besoin d'une API key qui te sera affichée sur la page d'inscription une fois que celle-ci sera terminée.
 
-Suis les intructions sur cette [page](https://siprip-web-6yw9.onrender.com) pour t'enregistrer et recevoir ton API key.
+Suis les instructions sur cette [page](https://siprip-web-6yw9.onrender.com) pour t'enregistrer et recevoir ton API key.
 Une fois obtenue, tu dois créer un fichier _.env.local_ à la racine de ce projet et ajouter une ligne avec ta clé en suivant cette syntaxe :
 ```
 VITE_GAME_HOST=https://siprip-api-aze5.onrender.com
@@ -35,7 +35,7 @@ VITE_PLAYER_TOKEN=<TON API KEY>
 
 ### Dépendances javascript
 
-Tu dois tout d'abord installer les dépendance javascript pour pouvoir exécuter ton projet en local sur ton poste.
+Tu dois tout d'abord installer les dépendances javascript pour pouvoir exécuter ton projet en local sur ton poste.
 Pour ce faire lance la commande :
 ```shell
 $ npm ci
@@ -61,10 +61,10 @@ Les routes ne sont pas documentées (volontairement) et c'est à toi de les déc
 
 ## Niveau 1
 
-Pour t'aider à démarrer, voici les intructions qui te permettrons de passer le niveau 1.
+Pour t'aider à démarrer, voici les instructions qui te permettront de passer le niveau 1.
 
 La route que tu dois appeler est [https://siprip-api-aze5.onrender.com/api/payment](https://siprip-api-aze5.onrender.com/api/payment) avec la méthode POST.
-Tu dois founir le token reçu au moment de ton enregistrement au dojo dans un header `x-auth-token`.
+Tu dois fournir le token reçu au moment de ton enregistrement au dojo dans un header `x-auth-token`.
 Le format du body attendu est :
 ```json
 {
@@ -93,7 +93,7 @@ bloc 1    bloc 2     bloc 3    bloc 4
        1+0
         1
 ```
-    - La somme des blocs 1 et 3 doit être inférieur à 10
+    - La somme des blocs 1 et 3 doit être inférieure à 10
     - Pour être valide, la carte respecte l’algorithme de Luhn
 
 Une fois un paiement réussi, un indice te permettant de recevoir les instructions pour le niveau suivant sera glissé dans la réponse ;).
