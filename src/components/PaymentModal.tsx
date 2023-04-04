@@ -1,5 +1,9 @@
 import { useState } from "react";
-import { postPayment, PostPaymentBody } from "../utils/post-payment";
+import {
+  postPayment,
+  PostPaymentBody,
+  PostPaymentResponse,
+} from "../utils/post-payment";
 
 interface PaymentModalProp {
   skinId: number;
@@ -8,6 +12,7 @@ interface PaymentModalProp {
 
 export function PaymentModal({ skinId, setShowModal }: PaymentModalProp) {
   const [cardSerial, setCardSerial] = useState<string>("");
+  const [paymentResponse, setPaymentResponse] = useState<PostPaymentResponse>();
 
   async function submitPayment(event: { preventDefault: () => void }) {
     event.preventDefault();
@@ -15,7 +20,7 @@ export function PaymentModal({ skinId, setShowModal }: PaymentModalProp) {
       card_serial: cardSerial,
       skin_id: skinId,
     };
-    const responsePostPayment = await postPayment(postPaymentBody);
+    setPaymentResponse(await postPayment(postPaymentBody));
   }
 
   return (
