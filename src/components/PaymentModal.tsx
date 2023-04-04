@@ -59,6 +59,31 @@ export function PaymentModal({ skinId, setShowModal }: PaymentModalProp) {
               </button>
             </div>
           </div>
+
+          <div className="justify-end p-6 rounded-b" id="Response Informations">
+            {paymentResponse ? (
+              paymentResponse.success ? (
+                <>
+                  <p className="text-green-500">
+                    Payment success for skin #{skinId}
+                  </p>
+                  {paymentResponse.decode_me ? (
+                    <p>
+                      Les instructions pour le niveau suivant sont dans la
+                      réponse HTTP.<br/>Sauras-tu les trouver ?
+                    </p>
+                  ) : null}
+                </>
+              ) : (
+                <>
+                  <p className="text-red-500 w-full">
+                    Payment failed : {paymentResponse.status_code}
+                  </p>
+                  <p className="w-full">Message: {paymentResponse.message}</p>
+                </>
+              )
+            ) : null}
+          </div>
         </form>
       </div>
     </>
