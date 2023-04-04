@@ -3,9 +3,10 @@ import { postPayment, PostPaymentBody } from "../utils/post-payment";
 
 interface PaymentModalProp {
   skinId: number;
+  setShowModal: (showModal: boolean) => void;
 }
 
-export function PaymentModal({ skinId }: PaymentModalProp) {
+export function PaymentModal({ skinId, setShowModal }: PaymentModalProp) {
   const [cardSerial, setCardSerial] = useState<string>("");
 
   return (

@@ -1,12 +1,25 @@
+import { useState } from "react";
 import {Skin} from "../types/skin.type";
 import {computeLevel} from "../utils/compute-level";
+import { PaymentModal } from "./PaymentModal";
 
 interface SkinsProp {
     skins: Skin[]
 }
 
-export const Skins = ({skins}: SkinsProp) => (
+export function Skins ({skins}: SkinsProp) {
+
+    const [showModal, setShowModal] = useState(false);
+    const [modalSkinId, setModalSkinId] = useState<number>(1);
+
+    function buySkin(skinId: number){
+        setModalSkinId(skinId);
+        setShowModal(true)
+    }
+
+    return (
     <>
+    {showModal ? (<PaymentModal skinId={modalSkinId} setShowModal={setShowModal}/>): null}
         {skins.map(skin => (
                 <li key={skin.id} className="py-3 sm:py-4">
                     <div className="flex items-center space-x-4">
@@ -21,11 +34,14 @@ export const Skins = ({skins}: SkinsProp) => (
                                 Level {computeLevel(skin)}
                             </p>
                         </div>
-                        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" 
+                                onClick={() => buySkin(skin.id) }>
                             ${skin.price}
                         </button>
                     </div>
                 </li>
             )
         )}
-    </>);
+    </>
+    )
+}
