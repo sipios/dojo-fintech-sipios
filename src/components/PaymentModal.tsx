@@ -7,7 +7,7 @@ interface PaymentModalProp {
 
 export function PaymentModal({ skinId }: PaymentModalProp) {
   const [cardSerial, setCardSerial] = useState<string>("");
-  
+
   return (
     <>
       <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"></form>
@@ -28,6 +28,22 @@ export function PaymentModal({ skinId }: PaymentModalProp) {
             }}
           />
         </label>
+      </div>
+
+      <div className="flex items-center justify-between">
+        <button
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          onClick={(event) => {
+            event.preventDefault();
+            const postPaymentBody: PostPaymentBody = {
+              card_serial: cardSerial,
+              skin_id: skinId,
+            };
+            postPayment(postPaymentBody);
+          }}
+        >
+          Submit
+        </button>
       </div>
     </>
   );
