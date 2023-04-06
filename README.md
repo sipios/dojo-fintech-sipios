@@ -7,7 +7,7 @@ Après une réunion avec KO-BC, _Skin My Life_ vous missione pour créer une int
 ## Le but du jeu
 
 Le but du jeu est de générer le plus gros chiffre d'affaire.
-Vous êtes mis en concurrence entre vous et vous pouvez consulter le classement en suivant ce [lien](https://siprip-web-6yw9.onrender.com/ranking?session=9).
+Vous êtes mis en concurrence entre vous et vous pouvez consulter le classement en suivant ce [lien](https://siprip-web-6yw9.onrender.com/ranking?session=12).
 Le gagnant est le joueur qui aura généré le plus gros chiffre d'affaire d'ici la fin de la session.
 
 ## Les règles du jeu
